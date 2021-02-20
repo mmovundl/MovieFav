@@ -5,44 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+      .container{
+        display:grid;
+        grid-template-columns: auto auto auto;
+      }
+    </style>
     <title>Movie Fav</title>
 </head>
-<body class="font-sans bg-blue-900 text-white">
-    <nav class="border-b border-gray-800"> 
-        <div class="container mx-auto flex items-center justify-between px-4 py-6">
-            <ul class="flex items-center">
-               
-              <li>
-                <a href=""><h1 class="text-2xl font-bold"> MovieFav</h1>
-                
-                </a>
-            </li> 
-                <li class="ml-16">
-                    <a class="hover:text-gray-500" href="">Movies</a>
-                </li>
-                <li class="ml-6">
-                    <a class="hover:text-gray-500"href="">TV Shows</a> 
-                </li>
-                <li>
-
-                </li>
-            </ul>  
-                    
-        </div>
-        @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+<body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MovieFav</a>  </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/index" >Movies</a>
+            </li>
+            <li class="nav-item">
+              @if (Route::has('login'))
+                @auth
+                  <a class="nav-link disabled" href="#">Favourites</a>   
+                @else
+                  <a href="{{ url('/home') }}" class="nav-link">Favourites</a>
+                  @endauth
                 @endif
-            @endauth
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          @if (Route::has('login'))
+          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+              @auth
+                  
+              @else
+                  <a href="{{ route('login') }}" class="btn btn-outline-light ml-4 my-2 my-sm-0" >Login</a>
+  
+                  @if (Route::has('register'))
+                      <a href="{{ route('register') }}" class="btn btn-outline-light my-2 my-sm-0"  >Register</a>
+                  @endif
+              @endauth
+          </div>
+      @endif
         </div>
-    @endif
-    </nav>
+      </nav>
+    
     @yield('content')
 </body>
 </html>
