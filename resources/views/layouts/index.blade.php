@@ -10,13 +10,13 @@
                    @foreach ($datas as $data)
                     <div class="col-xs-12 col-md-4">
                         <div class="card" style="width: 18rem; ">
-                            <img class="card-img-top" src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-movie-posters-2016/large/moonlight-ver2-xlg.jpg?1384968217" alt="Card image cap">
+                            <img class="card-img-top" src="{{'https://image.tmdb.org/t/p/w500/'.$data['poster_path']}}" alt="Card image cap">
                             <div class="card-body">
-                              <h5 class="card-title">MoonLight</h5>
-                              <p class="card-text">Feb, 2017</p>
+                              <h5 class="card-title">{{$data['title']}}</h5>
+                              <p class="card-text">{{\Carbon\Carbon::parse($data['release_date'])->format('M d, Y')}}</p>
                               @if (Route::has('login'))
                                 @auth
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <a href="{{ url('/home'.'/'.$data["title"].$data["poster_path"].'/'.$data['release_date'])}}" class="btn btn-primary">Add To Favourites</a>
                                 @else
                                 <a href="{{ route('login') }}" class="btn btn-primary" >Add To Favourites</a>
                                 @endauth

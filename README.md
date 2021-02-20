@@ -1,3 +1,41 @@
+##	Setting Up The Project
+
+	<h3>1.Clone GitHub repo for this project locally</h3>
+	<h3>2. cd into your project</h3>
+	<h3>3.Install Composer Dependencies</h3>
+	<p>In Your Terminal Run "composer install" command</p>
+	<h3>4.Install NPM Dependencies</h3>
+	<p>In Your Terminal Run "npm install" command</p>
+	<h3>5.Create a copy of your .env file</h3>
+	<p>If the .env already exist in project jump to (c)</p>
+	<p>(a) There is a .env.example which is a template of the .env file that the project expects us to have.</p>
+	<p>(b)In Your Terminal Run "cp .env.example .env" command</p>
+	<p>(c)Edit your environment variables in your .env file</p>
+	<p>    (i) DB_DATABASE=<<your database>></p>
+	<p>    (ii) TMDB_TOKEN=<<your api access token from https://www.themoviedb.org account >></p>
+	<h3>6.Migrate and Seed the database and seed</h3>
+	<p>In Your Terminal Run "php artsian:migrate --seed" command</p>
+	<h3>Generate Application Key</h3>
+	<p>In Your Terminal Run "php artisan key:genarate" command</p>
+
+<h3>Finally: Start server<h3>
+<p>In Your Terminal Run "php artisan serve" command to start serve(copy the link to your browser)</p>
+
+
+##	The Approach
+1. Designed the Interfaces and how everything will be displayed on the website
+2. Collected the data from the api, converted it into an array and displayed it by looping through the data
+3. Designed the database structure according to what needs to be displayed in the favourites interface
+3.Collected the data from the interface and added it to the database, this happens everytime a user clicks "Add to Favourites" button, only users who are logged in can access this fuctionality
+
+
+##	Why PHP(Laravel)
+1.Full-stack frame, we can easily add js components to make our projects more intercative(react,vue)
+2.Use of the MVC architecture.
+3. Allows scalebity and efficient perfomance.
+4.Easy to interact with external API's.
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

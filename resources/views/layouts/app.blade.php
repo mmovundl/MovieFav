@@ -29,17 +29,18 @@
             <li class="nav-item">
               @if (Route::has('login'))
                 @auth
-                  <a class="nav-link disabled" href="#">Favourites</a>   
+                <a href="{{ url('/home') }}" class="nav-link">Favourites</a>
+                
                 @else
-                  <a href="{{ url('/home') }}" class="nav-link">Favourites</a>
+                <a class="nav-link disabled" href="#">Favourites</a>   
                   @endauth
                 @endif
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact" >Contact Me</a>
+            </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          
           @if (Route::has('login'))
           <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
               @auth
