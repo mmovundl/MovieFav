@@ -1,24 +1,24 @@
 ##	Setting Up The Project
 
-	<p>Clone GitHub repo for this project locally</p>
-	<p> cd into your project</p>
-	<p>Install Composer Dependencies<p>
-	-In Your Terminal Run "composer install" command</p>
-	<p>Install NPM Dependencies</p>
+	### 1. Clone GitHub repo for this project locally
+	### 2.cd into your project
+	### 3.Install Composer Dependencies##
+	-In Your Terminal Run "composer install" command
+	### 4.Install NPM Dependencies
 	-In Your Terminal Run "npm install" command
-	<p>Create a copy of your .env file</p>
+	### 5.Create a copy of your .env file</p>
 	-If the .env already exist in project jump to (c)
 	(a) There is a .env.example which is a template of the .env file that the project expects us to have.
 	(b)In Your Terminal Run "cp .env.example .env" command
 	(c)Edit your environment variables in your .env file
 	   (i) DB_DATABASE="your database name"
 	    (ii) TMDB_TOKEN="your api access token from https://www.themoviedb.org account"
-	<p>Migrate and Seed the database and seed<p>
+	### 6.Migrate and Seed the database and seed
 	-In Your Terminal Run "php artsian:migrate --seed" command
-	<p>Generate Application Key</p>
+	### 7.Generate Application Key
 	-In Your Terminal Run "php artisan key:genarate" command
 
-<h3>Finally: Start server<h3>
+### 8.Finally: Start server
 In Your Terminal Run "php artisan serve" command to start serve(copy the link to your browser)
 
 
