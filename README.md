@@ -1,5 +1,5 @@
 ##	Setting Up The Project
-
+-Instructions on how to settup the project locally
 	### 1. Clone GitHub repo for this project locally
 	### 2.cd into your project
 	### 3.Install Composer Dependencies##
